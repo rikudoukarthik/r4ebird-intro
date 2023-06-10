@@ -21,7 +21,7 @@ data <- data %>%
 # PIPING is very useful! Will see example later.
 
 
-# Basic statistics ------------------------------------------------------------------
+# Basic summaries ------------------------------------------------------------------
 
 tot_bdr <- n_distinct(data$OBSERVER.ID)
 tot_lists <- n_distinct(data$SAMPLING.EVENT.IDENTIFIER)
@@ -29,7 +29,7 @@ tot_lists <- n_distinct(data$SAMPLING.EVENT.IDENTIFIER)
 # unique lists
 tot_ulists <- n_distinct(data$GROUP.ID)
 
-# we can also simply create a new column with the statistic
+# we can also simply create a new column with the summary
 
 # complete lists
 tot_clists <- data %>% 
