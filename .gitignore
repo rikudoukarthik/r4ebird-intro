@@ -6,5 +6,3 @@
 *.Rproj
 
 data/
-outputs/
-data/MyEBirdData.csv
