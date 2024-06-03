@@ -1,5 +1,5 @@
-# tidyverse is an umbrella package (https://www.tidyverse.org/packages/)
 library(tidyverse)
+library(lubridate)
 
 load("data/data.RData")
 
@@ -13,7 +13,7 @@ data <- data %>%
                            SAMPLING.EVENT.IDENTIFIER, 
                            GROUP.IDENTIFIER)) %>% # like formulas in Excel
   # working with dates, LUBRIDATE
-  mutate(OBSERVATION.DATE = as.Date(OBSERVATION.DATE), 
+  mutate(OBSERVATION.DATE = as_date(OBSERVATION.DATE), 
          YEAR = year(OBSERVATION.DATE), 
          MONTH = month(OBSERVATION.DATE),
          DAY.M = day(OBSERVATION.DATE))

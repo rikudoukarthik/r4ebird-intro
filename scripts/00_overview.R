@@ -1,13 +1,13 @@
 # R project
 
 # install.packages("tidyverse")
+# devtools::install_github("rikudoukarthik/skimmr")
 library(tidyverse)
+library(skimmr)
 
 
 # importing data
-data <- read.delim("data/ebd_IN-KL_202304_202304_relApr-2023.txt", 
-                   sep = "\t", header = T, quote = "",
-                   stringsAsFactors = F, na.strings = c(""," ",NA))
+data <- skimmr::read.ebd("data/ebd_IN-KL_202404_202404_relApr-2024.txt")
 
 
 # calculating number of species reported per district
