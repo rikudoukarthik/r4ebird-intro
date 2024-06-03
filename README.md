@@ -32,11 +32,9 @@ If you face errors with this code, such as endless failed download attempts (ref
 There are two main ways to create your own local copy of this project directory:
 
 1. For participants of the KBMM 2024 R workshop, use the Google Drive link that was shared with you and download the *entire folder* (not individual subfolders). It is important to retain this folder structure as is. (*Note: this already includes the latest EBD data we will use in the workshop.*)
-1. For Git users, clone this GitHub repository onto your system
-
-  1.1. Follow the steps in [this quick tutorial](https://argoshare.is.ed.ac.uk/healthyr_book/clone-an-existing-github-project-to-new-rstudio-project.html#fig:chap14-fig-clone) to clone the repository from GitHub onto a specified local directory.
-    
-  1.1. Since the EBD data have not been committed to the GitHub repository, these need to be downloaded separately [from eBird](https://ebird.org/data/download/ebd) and stored in `data/`. In the workshop, we use the dataset filtered for the latest available month and for the state of Kerala, so you are recommended to apply these same filters when downloading.
+1. For Git users, clone this GitHub repository onto your system:
+    - Follow the steps in [this quick tutorial](https://argoshare.is.ed.ac.uk/healthyr_book/clone-an-existing-github-project-to-new-rstudio-project.html#fig:chap14-fig-clone) to clone the repository from GitHub onto a specified local directory.
+    - Since the EBD data have not been committed to the GitHub repository, these need to be downloaded separately [from eBird](https://ebird.org/data/download/ebd) and stored in `data/`. In the workshop, we use the dataset filtered for the latest available month and for the state of Kerala, so you are recommended to apply these same filters when downloading.
     
 **NOTE:** It is important that the entire directory is downloaded, including the R Project file (`r4ebird-intro.Rproj`). This is a crucial element of setting up the directory, and offers several benefits  such as ability to refer to files using relative paths, and more broadly, reproducibility. See [this short explainer](https://rfortherestofus.com/2022/10/rstudio-projects) for why it is the preferred method of working in RStudio. If you're interested in the advanced nitty-gritties, see [this](https://r4ds.hadley.nz/workflow-scripts.html#projects) or [this](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) article on the importance of project-oriented workflows.
 
@@ -75,12 +73,12 @@ Refer: `scripts/02_ebird-data-import.R`
 
 - Adding useful columns to eBird data
 - Birding summaries from eBird data
-- SIDE NOTE: Benefits of "piping" with %>% and tidy workflow
+- SIDE NOTE: Benefits of "piping" with `%>%` and tidy workflow
 - The famous "reporting frequency"!
   - Comparing 5 most common species in different areas
-  - Example of how to create and use functions
-  - Save results of analysis for sharing
-- Creating and saving graph
+  - Example of creating and using a function
+  - Saving results for sharing
+- Creating and saving summary graph
 - Creating and saving map of eBirding locations
   - Working with spatial data
 
@@ -101,7 +99,7 @@ Refer: `scripts/04_extra.R`
 - Video tutorials on using R
   - Videos 8-12 in [this YouTube playlist](https://www.youtube.com/playlist?list=PLwFqvDRX_4sJ0HnNGXlWjd8A7vFi2k0wp) of a biodiversity science course (relatable).
   - [Another YouTube playlist](https://www.youtube.com/playlist?list=PLwFqvDRX_4sLZYeVgDQGINEXrGkgeg3Td) of a different course
-  - [Further videos](https://www.youtube.com/playlist?list=PL1BRV4y5o32AtvEy565FRAfHnEn5TgsQ4)) on working with ecological data in R
+  - [Further videos](https://www.youtube.com/playlist?list=PL1BRV4y5o32AtvEy565FRAfHnEn5TgsQ4) on working with ecological data in R
 - Online forums like [StackOverflow](https://stackoverflow.com/)
   - Incredibly active and helpful community that helps each other. Your specific question has probably been asked and answered before.
 - AI chatbots like [ChatGPT](https://chatgpt.com/)
