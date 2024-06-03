@@ -108,5 +108,5 @@ Refer: `scripts/04_extra.R`
 The utility of R is not limited to just data analysis; one can also use it to create well-formatted documents like reports, presentations, etc., with markdown as well as the typesetting features of LaTeX.
 
 - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
-- [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- [R Markdown Cheatsheet (PDF)](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 

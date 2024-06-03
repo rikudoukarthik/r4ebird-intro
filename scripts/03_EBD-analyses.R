@@ -48,15 +48,15 @@ data_ebd %>% distinct(CATEGORY)
 tot_specs <- data_ebd %>% 
   filter(CATEGORY %in% c("species", "issf") &
            !is.na(COUNTY)) %>% 
-  # filter(CATEGORY == "species" | CATEGORY == "issf") 
   group_by(COUNTY) %>%
   summarise(NO.SP = n_distinct(COMMON.NAME))
 
-# tot_hours <- data_ebd %>% 
-#   # we need single row per checklist, because we are summing values across rows
-#   distinct(SAMPLING.EVENT.IDENTIFIER, DURATION.MINUTES) %>% 
-#   filter(!is.na(DURATION.MINUTES)) %>% 
-#   summarise(HOURS = sum(DURATION.MINUTES/60))
+
+# Exercise ------------------------------------------------------------------------
+
+# 1. How to calculate total number of locations?
+
+tot_loc
 
 
 # NB: Pipelines and tidy workflow! ------------------------------------------------------
@@ -91,12 +91,6 @@ temp3 == temp4
 temp4 == temp5
 
 
-
-# Exercise ------------------------------------------------------------------------
-
-# 1. Read in raw EBD and get a list of common names of species reported.
-
-
 # Reporting frequency! --------------------------------------------------------------
 
 # Most important metric for most analyses of eBird data
@@ -121,7 +115,7 @@ data_KL <- data_ebd
 calc_repfreq <- function(data) {
   
   data0 <- data %>%
-    # we need to consider ONLY complete checklists
+    # we need to consider ONLY complete checklists---WHY?
     filter(ALL.SPECIES.REPORTED == 1) %>%
     # repfreq
     mutate(TOT.LISTS = n_distinct(GROUP.ID)) %>% 
@@ -161,13 +155,6 @@ write.csv(comparison, file = "outputs/comparison.csv")
 # or any other format; several read/write functions exist
 
 
-# Exercise ------------------------------------------------------------------------
-
-# 2. Why should we consider only complete lists for rep. freq.?
-
-# 3. Get a list of 5 LEAST common species for your own district.
-
-
 # Graph of district-wise stats ------------------------------------------------------
 
 # ggplot works in layers
@@ -204,3 +191,7 @@ ggsave(plot = map, filename = "outputs/map.png",
        # use png(), not ragg::agg_png() which does anti-aliasing, removing crispness of points
        device = png,
        width = 7, height = 7, units = "in", dpi = 300)
+
+# Exercise --------------------------------------------------------------------------
+
+# 2. Using your personal eBird data, get your life list (common names)
