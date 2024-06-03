@@ -6,7 +6,7 @@ load("data/data.RData")
 
 # Adding useful columns --------------------------------------------------------------
 
-data <- data %>% 
+data_ebd <- data_ebd %>% 
   # MUTATE
   # group ID (IMPORTANT!!)
   mutate(GROUP.ID = ifelse(is.na(GROUP.IDENTIFIER), 
@@ -23,36 +23,36 @@ data <- data %>%
 
 # Basic summaries ------------------------------------------------------------------
 
-tot_bdr <- n_distinct(data$OBSERVER.ID)
-tot_lists <- n_distinct(data$SAMPLING.EVENT.IDENTIFIER)
+tot_bdr <- n_distinct(data_ebd$OBSERVER.ID)
+tot_lists <- n_distinct(data_ebd$SAMPLING.EVENT.IDENTIFIER)
 
 # unique lists
-tot_ulists <- n_distinct(data$GROUP.ID)
+tot_ulists <- n_distinct(data_ebd$GROUP.ID)
 
 # we can also simply create a new column with the summary
 
 # complete lists
-tot_clists <- data %>% 
+tot_clists <- data_ebd %>% 
   filter(ALL.SPECIES.REPORTED == 1) %>% 
   summarise(C.LISTS = n_distinct(SAMPLING.EVENT.IDENTIFIER))
 
 # summarise() aggregates data into single row; collapses data per group
-tot_clists_dist <- data %>%
+tot_clists_dist <- data_ebd %>%
   filter(ALL.SPECIES.REPORTED == 1) %>%
   group_by(COUNTY) %>%
   summarise(C.LISTS.DIST = n_distinct(SAMPLING.EVENT.IDENTIFIER))
 
 
-data %>% distinct(CATEGORY)
+data_ebd %>% distinct(CATEGORY)
 
-tot_specs <- data %>% 
+tot_specs <- data_ebd %>% 
   filter(CATEGORY %in% c("species", "issf") &
            !is.na(COUNTY)) %>% 
   # filter(CATEGORY == "species" | CATEGORY == "issf") 
   group_by(COUNTY) %>%
   summarise(NO.SP = n_distinct(COMMON.NAME))
 
-# tot_hours <- data %>% 
+# tot_hours <- data_ebd %>% 
 #   # we need single row per checklist, because we are summing values across rows
 #   distinct(SAMPLING.EVENT.IDENTIFIER, DURATION.MINUTES) %>% 
 #   filter(!is.na(DURATION.MINUTES)) %>% 
@@ -63,7 +63,7 @@ tot_specs <- data %>%
 
 # 1. Intermediate objects
 
-temp1 <- filter(data, ALL.SPECIES.REPORTED == 1)
+temp1 <- filter(data_ebd, ALL.SPECIES.REPORTED == 1)
 
 temp2 <- group_by(temp1, COUNTY)
 
@@ -72,7 +72,7 @@ temp3 <- summarise(temp2, C.LISTS = n_distinct(SAMPLING.EVENT.IDENTIFIER))
 
 # 2. Nested functions
 
-temp4 <- summarise(group_by(filter(data, 
+temp4 <- summarise(group_by(filter(data_ebd, 
                                    ALL.SPECIES.REPORTED == 1), 
                             COUNTY), 
                    C.LISTS = n_distinct(SAMPLING.EVENT.IDENTIFIER))
@@ -80,7 +80,7 @@ temp4 <- summarise(group_by(filter(data,
 
 # 3. Pipes!
 
-temp5 <- data %>% 
+temp5 <- data_ebd %>% 
   filter(ALL.SPECIES.REPORTED == 1) %>% 
   group_by(COUNTY) %>%
   summarise(C.LISTS = n_distinct(SAMPLING.EVENT.IDENTIFIER))
@@ -106,14 +106,14 @@ temp4 == temp5
 
 # STEP 1: Filtering for data
 
-data_KAU <- data %>% 
+data_KAU <- data_ebd %>% 
   # https://ebird.org/hotspot/L3086715
   filter(LOCALITY == "Kerala Agricultural University--General Area")
 
-data_TS <- data %>% 
+data_TS <- data_ebd %>% 
   filter(COUNTY == "Thrissur")
 
-data_KL <- data
+data_KL <- data_ebd
 
 
 # STEP 2: Calculate reporting frequency (functionise)
@@ -188,12 +188,12 @@ ggsave(plot = fig1, filename = "outputs/fig1.png",
 library(sf)
 
 # convert data into spatial objects, using lat-long info in our data as coordinates
-data_sf <- data %>% 
+data_sf <- data_ebd %>% 
   st_as_sf(coords = c("LONGITUDE", "LATITUDE"))
 
 # ggplot works in layers
 map <- ggplot(data = data_sf) +
-  geom_sf(colour = "#FCFA53", size = 0.05, stroke = 0, alpha = 1) +
+  geom_sf(colour = "#FCFA53", size = 0.05, stroke = 0.5, alpha = 1) +
   labs(title = "Point map") +
   theme_void() +
   theme(plot.background = element_rect(fill = "black", colour = NA),

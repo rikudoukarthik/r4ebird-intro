@@ -1,5 +1,6 @@
 # tidyverse is an umbrella package (https://www.tidyverse.org/packages/)
 library(tidyverse)
+library(skimmr)
 
 
 # eBird data: EBD vs My Data
@@ -40,7 +41,7 @@ View(data_ebd)
 # Steps are slightly simpler since it is a .csv, and a smaller file.
 # We can do the same steps for column selection (preimp, nms, etc.), but small file so not essential.
 
-data_mydata <- read_csv(file = "data/MyEBirdData.csv")
+data_mydata <- read.csv(file = "data/MyEBirdData.csv")
 
 # how does the data look?
 head(data_mydata)

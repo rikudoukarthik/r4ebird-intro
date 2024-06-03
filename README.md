@@ -20,6 +20,7 @@ Run the following lines of code in the RStudio "console" tab:
 
 ```
 install.packages("tidyverse")
+install.packages("devtools")
 devtools::install_github("rikudoukarthik/skimmr")
 install.packages("sf")
 ```
@@ -89,6 +90,8 @@ Refer: `scripts/03_EBD-analyses.R`
 
 Quick exercises to do at home, using what we learned.
 
+Refer: `scripts/04_extra.R`
+
 ## Additional resources
 
 - [R for Data Science](https://r4ds.hadley.nz/)
@@ -98,12 +101,11 @@ Quick exercises to do at home, using what we learned.
 - Video tutorials on using R
   - Videos 8-12 in [this YouTube playlist](https://www.youtube.com/playlist?list=PLwFqvDRX_4sJ0HnNGXlWjd8A7vFi2k0wp) of a biodiversity science course (relatable).
   - [Another YouTube playlist](https://www.youtube.com/playlist?list=PLwFqvDRX_4sLZYeVgDQGINEXrGkgeg3Td) of a different course
-  - [Further videos]( (https://www.youtube.com/playlist?list=PL1BRV4y5o32AtvEy565FRAfHnEn5TgsQ4)) on working with ecological data in R
+  - [Further videos](https://www.youtube.com/playlist?list=PL1BRV4y5o32AtvEy565FRAfHnEn5TgsQ4)) on working with ecological data in R
 - Online forums like [StackOverflow](https://stackoverflow.com/)
-  - Incredibly active and helpful community that helps each other. Your specific question has probably been asked before, and people have probably given great answers.
+  - Incredibly active and helpful community that helps each other. Your specific question has probably been asked and answered before.
 - AI chatbots like [ChatGPT](https://chatgpt.com/)
   - Since R is a language, these tools can be incredibly useful to troubleshoot your problematic code or to help you write code for the task you have in mind.
-SO, gpt
 
 The utility of R is not limited to just data analysis; one can also use it to create well-formatted documents like reports, presentations, etc., with markdown as well as the typesetting features of LaTeX.
 
