@@ -195,3 +195,5 @@ ggsave(plot = map, filename = "outputs/map.png",
 # Exercise --------------------------------------------------------------------------
 
 # 2. Using your personal eBird data, get your life list (common names)
+
+lifelist

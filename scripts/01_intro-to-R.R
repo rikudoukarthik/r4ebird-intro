@@ -63,8 +63,3 @@ convert_kg_to_lb(75); convert_kg_to_lb(27.42); convert_kg_to_lb(250); convert_kg
 
 # R is not only extremely powerful and flexible, but also allows work to be transparent and reproducible.
 
-
-# Exercise ------------------------------------------------------------------------
-
-# 1. Create a function that takes values in km and converts them to miles. (1 mile ~ 1.6 km)
-#    Output the results for four different input values.
