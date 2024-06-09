@@ -2,7 +2,7 @@
 
 This is an introductory crash course to using R for analysis of eBird data, originally created for the R workshop during Kerala Bird Monitoring Meet (KBMM) 2023 (see [that version](https://github.com/rikudoukarthik/r4ebird-intro/releases/tag/v2023.06) of the repo). 
 
-This quick course is designed in the form of a workshop session of around 2 hours. It is structured as follows.
+This quick course is designed in the form of a workshop session of around 3 hours. It is structured as follows.
 
 ## Chapter 0: Setup
 
@@ -42,7 +42,7 @@ There are two main ways to create your own local copy of this project directory:
 
 Your personal eBird data can be downloaded from [here](https://ebird.org/india/downloadMyData). This file is likely to be smaller than the EBD. We will use this to understand differences from EBD and to explore interesting patterns in your personal birding.
 
-## Chapter 0.9: Overview (5 min)
+## Chapter 0.9: Overview (10 min)
 
 Before we begin, we will quickly go over some of the main processes and outputs we will be performing/generating during this workshop. This is to give an immediate idea of what to expect. 
 
@@ -50,7 +50,7 @@ Run the R script fully on your system. Examine the outputs that are produced.
 
 Refer: `scripts/00_overview.R`
 
-## Chapter 1: Introduction to R (15 min)
+## Chapter 1: Introduction to R (30 min)
 
 - Introducing mechanics of R through simple examples
 - Input-output, assigning to objects
@@ -69,7 +69,7 @@ Refer: `scripts/01_intro-to-R.R`
 
 Refer: `scripts/02_ebird-data-import.R`
 
-## Chapter 3: Analysing eBird Basic Dataset (EBD) (60 min)
+## Chapter 3: Analysing eBird Basic Dataset (EBD) (90 min)
 
 - Adding useful columns to eBird data
 - Birding summaries from eBird data
@@ -84,7 +84,7 @@ Refer: `scripts/02_ebird-data-import.R`
 
 Refer: `scripts/03_EBD-analyses.R`
 
-## Chapter 4: Further practice (10 min)
+## Chapter 4: Further practice (20 min)
 
 Quick exercises to do at home, using what we learned.
 
