@@ -16,8 +16,8 @@ library(skimmr)
 rawpath <- "data/ebd_IN-KL_202404_202404_relApr-2024.txt"
 
 # Selecting columns of interest.
-# Go through metadata file to decide which of 50 columns are necessary for your analysis,  
-# and modify this vector accordingly.
+# Run skimmr::read.ebd(rawpath, cols_print_only = TRUE) to decide which of 50 columns are 
+# necessary for your analysis, and modify this vector accordingly.
 # For larger datasets, excluding unnecessary columns reduces the size of the imported object
 # and makes it easier to work with it.
 my_cols <- c("CATEGORY","EXOTIC.CODE","COMMON.NAME","OBSERVATION.COUNT",
@@ -39,7 +39,7 @@ View(data_ebd)
 # loading My eBird Data -------------------------------------------------------------
 
 # Steps are slightly simpler since it is a .csv, and a smaller file.
-# We can do the same steps for column selection (preimp, nms, etc.), but small file so not essential.
+# We can do the same steps for column selection (my_cols), but small file so not essential.
 
 data_mydata <- read.csv(file = "data/MyEBirdData.csv")
 

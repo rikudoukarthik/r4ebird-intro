@@ -13,6 +13,10 @@ two <- 1 + 1
 
 two == 2
 
+four <- 1 + 1
+
+two == four
+
 # Assigning other objects.
 two_word <- "two"
 prim_colours <- c("red", "green", "blue")

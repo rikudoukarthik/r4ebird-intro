@@ -175,6 +175,7 @@ ggsave(plot = fig1, filename = "outputs/fig1.png",
 library(sf)
 
 # convert data into spatial objects, using lat-long info in our data as coordinates
+# (can later try replacing data_ebd with data_mydata, for personal eBird map)
 data_sf <- data_ebd %>% 
   st_as_sf(coords = c("LONGITUDE", "LATITUDE"))
 
